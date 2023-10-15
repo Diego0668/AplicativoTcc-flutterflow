@@ -3,27 +3,27 @@ import 'dart:typed_data';
 
 class LivroModel {
   late final int id;
-  late final String nome;
+  late final String titulo;
   late final Uint8List? imagem;
-  late final String statusProd;
+  late final String statusLivro;
   late final int quantidade;
 
-  LivroModel({id, nome, imagem, statusProd, quantidade});
+  LivroModel({id, titulo, imagem, statusLivro, quantidade});
 
   int get getId {
     return id;
   }
 
-  String get getNome {
-    return nome;
+  String get getTitulo {
+    return titulo;
   }
 
   Uint8List get getImagem {
     return imagem!;
   }
 
-  String get getStatusProd {
-    return statusProd;
+  String get getStatusLivro {
+    return statusLivro;
   }
 
   int get getQuantidade {
@@ -32,9 +32,9 @@ class LivroModel {
 
   Map<String, dynamic> toMap() => {
         "id": id,
-        "nome": nome,
+        "titulo": titulo,
         "imagem": imagem,
-        "statusProd": statusProd,
+        "statusLivro": statusLivro,
         "quantidade": quantidade
       };
 
@@ -43,9 +43,9 @@ class LivroModel {
   factory LivroModel.fromMap(Map<String, dynamic> map) {
     return LivroModel(
         id: map['id'],
-        nome: map['nome'],
+        titulo: map['titulo'],
         imagem: map['imagem'],
-        statusProd: map['statusProd'],
+        statusLivro: map['statusLivro'],
         quantidade: map['quantidade']);
   }
 
@@ -56,16 +56,16 @@ class LivroModel {
     this.id = elementAt;
   }
 
-  void setNome({required nome}) {
-    this.nome = nome;
+  void setTitulo({required titulo}) {
+    this.titulo = titulo;
   }
 
   void setImagem(Uint8List decode) {
     this.imagem = decode;
   }
 
-  void setStatusProd({required statusProd}) {
-    this.statusProd = statusProd;
+  void setStatusLivro({required statusLivro}) {
+    this.statusLivro = statusLivro;
   }
 
   void setQuantidade({required quantidade}) {
